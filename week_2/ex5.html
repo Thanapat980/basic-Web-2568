@@ -1,68 +1,108 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>ตอบโต้</title>
-        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;700&display=swap" rel="stylesheet">
-        <style>
-            body {
-                background-color: rgb(0, 0, 0);
-                font-family: 'Kanit', sans-serif;
-                margin: 0;
-                padding: 20px;
-                text-align: center;
-            }
-            h2 {
-                color: pink;
-                font-size: 75px;
-            }
-            p {
-                color: rgb(255, 0, 0);
-                font-size: 50px;
-            }
-            input {
-                height: 100px;
-                width: 500px;
-                border-radius: 15px;
-                font-size: 75px;
-                text-align: center;
-            }
-            select {
-                font-size: 50px;
-                padding: 10px;
-                border-radius: 10px;
-            }
-        </style>
-    </head>
+<head>
+    <title>ตอบโต้</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #2b0f3f, #ff4fa3);
+            font-family: 'Kanit', sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
 
-    <body>
-        <h2>ยินดีต้อนรับ</h2>
-        
-        <input id="mag-Input" placeholder="ใส่ข้อความ" type="search">
-        <p id="show-mag">ใส่ชื่อผู้ใช้: </p>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZRU7kLbwvPKV62cm2pwSydG2Fo_sqnMwFDQ&s" alt="">
-        <h2>เลือภาษาที่คุณชอบ</h2>
-        <select id="select-input">
-            <option>ตัวเลือก</option>
-            <option>Java scrip</option>
-            <option>Python</option>
-            <option>Go</option>
-        </select>
-        <p id="select-mag">คุณเลือก: </p>
+        h2 {
+            color: #ffb7f5;
+            font-size: 75px;
+            text-shadow: 0 0 15px #ff3bcf;
+        }
 
-        <script>
-            const magInputElement = document.getElementById('mag-Input')
-            magInputElement.addEventListener("input", function() {
-                const mag = this.value
-                const showmagElement = document.getElementById('show-mag')
-                showmagElement.innerText = 'สวัสดี คุณ: ' + mag
-            })
+        p {
+            color: #fff;
+            font-size: 50px;
+            text-shadow: 0 0 10px #ff94d2;
+            transition: 0.3s;
+        }
 
-            const magselectElement = document.getElementById("select-input")
-            magselectElement.addEventListener("change", function() {
-                const mag = this.value
-                const showmagElement = document.getElementById("select-mag")
-                showmagElement.innerText = 'เลือก: ' + mag
-            })
-        </script>
-    </body>
+        input {
+            height: 100px;
+            width: 500px;
+            border-radius: 15px;
+            font-size: 75px;
+            text-align: center;
+            border: none;
+            outline: none;
+            background: #ffffffaa;
+        }
+
+        select {
+            font-size: 50px;
+            padding: 10px;
+            border-radius: 10px;
+            background: #ffffffaa;
+            border: none;
+        }
+
+        .fade {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2>ยินดีต้อนรับ</h2>
+
+    <input id="mag-Input" placeholder="ใส่ชื่อของคุณ" type="search">
+    <p id="show-mag">ใส่ชื่อผู้ใช้: </p>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZRU7kLbwvPKV62cm2pwSydG2Fo_sqnMwFDQ&s" alt="">
+
+    <h2>เลือกภาษาที่คุณชอบ</h2>
+    <select id="select-input">
+        <option>ตัวเลือก</option>
+        <option>JavaScript</option>
+        <option>Python</option>
+        <option>Go</option>
+    </select>
+    <p id="select-mag">คุณเลือก: </p>
+
+    <script>
+        const magInputElement = document.getElementById('mag-Input');
+        const showmagElement = document.getElementById('show-mag');
+
+        magInputElement.addEventListener("input", function () {
+            const mag = this.value;
+            showmagElement.innerText = 'สวัสดี คุณ: ' + mag;
+
+            showmagElement.classList.remove("fade");
+            void showmagElement.offsetWidth; 
+            showmagElement.classList.add("fade");
+        });
+
+        const magselectElement = document.getElementById("select-input");
+        const selectMagElement = document.getElementById("select-mag");
+
+        magselectElement.addEventListener("change", function () {
+            const mag = this.value;
+            selectMagElement.innerText = 'คุณเลือก: ' + mag;
+
+            selectMagElement.classList.remove("fade");
+            void selectMagElement.offsetWidth; 
+            selectMagElement.classList.add("fade");
+        });
+    </script>
+</body>
 </html>
