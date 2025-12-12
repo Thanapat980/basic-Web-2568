@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lmao</title>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                background-color: rgb(0, 0, 0);
+                font-family: 'Kanit', sans-serif;
+                margin: 0;
+                padding: 20px;
+                text-align: center;
+            }
+            h2 {
+                color: pink;
+                font-size: 75px;
+            }
+            p {
+                color: rgb(255, 0, 0);
+                font-size: 50px;
+            }
+            input {
+                height: 100px;
+                width: 500px;
+                border-radius: 15px;
+                font-size: 75px;
+                text-align: center;
+            }
+            select {
+                font-size: 50px;
+                padding: 10px;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>ข่าวด่วน</h2>
+        <p id="show-mag">อ่านข้อความ: </p>
+        <input id="mag-Input" placeholder="ใส่ข้อความ" type="search">
+        <br>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZRU7kLbwvPKV62cm2pwSydG2Fo_sqnMwFDQ&s" alt="">
+        
+        <h2>ทดสอบการเลือกแบบ Select</h2>
+        <p id="select-mag"> ข้อความ: </p>
+        <select id="select-input">
+            <option>เลือกตัวเลือก</option>
+            <option>ตัวเลือกที่ 1</option>
+            <option>ตัวเลือกที่ 2</option>
+            <option>ตัวเลือกที่ 3</option>
+        </select>
+
+        <script>
+            const magInputElement = document.getElementById('mag-Input')
+            magInputElement.addEventListener("input", function() {
+                const mag = this.value
+                const showmagElement = document.getElementById('show-mag')
+                showmagElement.innerText = 'ข้อความที่อ่านได้: ' + mag
+            })
+
+            const magselectElement = document.getElementById("select-input")
+            magselectElement.addEventListener("input", function() {
+                const mag = this.value
+                const showmagElement = document.getElementById("select-mag")
+                showmagElement.innerText = 'เลือก: ' + mag
+            })
+        </script>
+    </body>
+</html>

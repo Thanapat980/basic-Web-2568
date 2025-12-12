@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ตรวจสอบอายุผู้ใช้งาน</title>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;700&display=swap" rel="stylesheet">
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <h1>โปรแกรมเช็คอายุ</h1>
+        <input id="input-age" placeholder="กรุณากรอกอายุ" type="number">
+        <button onclick="checkAge()">ตรวจสอบ</button>
+        <h1 id="age-msg">คุณอยู่ในวัย</h1>
+
+        <script>
+         async  function checkAge() {
+                const ageInputElement = document.getElementById('input-age')
+                const age = ageInputElement.value
+                const ageMsgElement =   document.getElementById('age-msg')
+
+                if (age == "") {
+                    alert('คุณยังไม่ได้ระบุอายุ')
+                }
+                const covertAgeToNumber = + age
+
+                if (covertAgeToNumber >= 60) {
+                    ageMsgElement.innerText = 'คุณอยู่ในวัย: ผู้สูงอายุ'
+                } else if (covertAgeToNumber >= 25) {
+                    ageMsgElement.innerText = 'คุณอยู่ในวัย: ทำงาน'
+                } else if (covertAgeToNumber >= 13) {
+                    ageMsgElement.innerText = 'คุณอยู่ในวัย: วัยรุ่น'
+                } else if (covertAgeToNumber < 13) {
+                    ageMsgElement.innerText = 'คุณอยู่ในวัย: วัยเด็ก'
+                }
+            }
+        </script>
+    </body>
+</html>
