@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เข้าใช้อินเตอร์เน็ต</title>
+
+<!-- Bootstrap & jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body {
+    background-color: #1a1a1a;
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+/* NAVBAR */
+#navigation-purple {
+    background-color: #ff4655;
+    border: none;
+    border-radius: 0;
+    text-align: center;
+}
+#navigation-purple .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#navigation-purple .avatar {
+    height: 80px;
+    margin: 10px auto;
+    border: 2px solid #ff4655;
+    border-radius: 5px;
+}
+#navigation-purple .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+/* FORM LOGIN */
+.form-log-in-with-email .form-white-background {
+    background-color: #111;
+    box-shadow: 0 0 20px rgba(255,70,85,0.5);
+    padding: 40px 20px;
+    margin-bottom: 32px;
+    border-radius: 10px;
+}
+.form-log-in-with-email input {
+    background-color: #222;
+    color: #ff4655;
+    border: 1px solid #ff4655;
+}
+.form-log-in-with-email button {
+    background-color: #ff4655;
+    color: #fff;
+    font-weight: bold;
+    padding: 15px 35px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.form-log-in-with-email button:hover {
+    background-color: #ff6b7a;
+    box-shadow: 0 0 10px #ff4655;
+}
+.form-log-in-with-email a {
+    color: #ff4655;
+}
+.form-log-in-with-email a:hover {
+    text-decoration: underline;
+}
+
+/* NEWS */
+.well {
+    background-color: #1a1a1a;
+    border: 1px solid #ff4655;
+    box-shadow: 0 0 10px rgba(255,70,85,0.2);
+}
+
+/* TABLE */
+.table-bordered>thead>tr>th {
+    background-color: #ff4655;
+    color: #fff;
+    border-color: #ff4655;
+}
+.table-bordered>tbody>tr>td {
+    border-color: #ff4655;
+}
+
+/* FOOTER */
+.footer-distributed {
+    background-color: #111;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(255,70,85,0.5);
+}
+.footer-distributed a {
+    color: #ff4655;
+}
+.footer-distributed a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-default" id="navigation-purple">
+  <div class="container">
+      <a href="#"><img class="img-responsive avatar" src="https://logodix.com/logo/2210572.png" alt="logo"></a>
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+          <!-- เมนูว่าง -->
+      </div>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  <div class="row" style="margin-top:30px;">
+      <div class="col-lg-3 col-md-3 col-sm-3">
+          <div class="main-content">
+              <h2>LOGIN INTERNET</h2>
+              <form class="form-login" method="post" action="/">
+                  <div class="form-log-in-with-email">
+                      <div class="form-white-background">
+                          <input type="hidden" name="4Tredir" value="http://www.gstatic.com/generate_204">
+                          <input type="hidden" name="magic" value="0090a5191ba0b75c">
+                          <div class="form-row">
+                              <label><span>Username</span>
+                                  <input name="username" id="ft_un" type="text" placeholder="กรุณากรอก user name" autofocus>
+                              </label>
+                          </div>
+                          <div class="form-row">
+                              <label><span>Password</span>
+                                  <input name="password" id="ft_pd" type="password" placeholder="กรุณากรอก พาสเวิร์ด">
+                              </label>
+                          </div>
+                          <div class="form-row">
+                              <button type="submit" id="submit" name="submit">Log in</button>
+                          </div>
+                          <a href="https://passwd.rmutk.ac.th/">หากต้องการเปลี่ยนรหัสผ่านคลิก ที่นี่</a>
+                      </div>
+                      <div class="well">
+                          <span style="color:red">หากท่านลืมรหัสผ่าน !!</span><br>
+                          โทร 0 2287 7010
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+
+      <div class="col-lg-9 col-md-9 col-sm-9">
+          <h2>ข่าวประกาศ</h2>
+          <div class="well">
+              <ul>
+                  <h4>การเชื่อมต่อ Wifi โดยไม่ต้องกรอกรหัสผ่านบ่อยครั้ง</h4>
+                  <li>เพื่อเป็นการลดปัญหาการกรอกรหัสผ่านบ่อยครั้ง... </li>
+              </ul>
+          </div>
+          <div class="well">
+              <h4>บทลงโทษสำหรับผู้กระทำผิด พรบ คอมพิวเตอร์ พ.ศ. 2550</h4>
+              <table class="table table-bordered table-responsive">
+                  <thead>
+                      <tr>
+                          <th>ฐานความผิด</th>
+                          <th>โทษจำคุก</th>
+                          <th>โทษปรับ</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr><td>มาตรา 5 การเข้าถึงระบบคอมพิวเตอร์โดยมิชอบ</td><td>ไม่เกิน 6 เดือน</td><td>ไม่เกิน 10,000 บาท</td></tr>
+                      <tr><td>มาตรา 6 การเปิดเผยมาตรการป้องกัน...</td><td>ไม่เกิน 1 ปี</td><td>ไม่เกิน 20,000 บาท</td></tr>
+                      <!-- เพิ่มรายการอื่นตามเดิม -->
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer-distributed">
+  <div class="footer-left">
+      <h3>UTK <span>Carit</span></h3>
+      <p class="footer-links">
+          <a href="http://www.carit.rmutk.ac.th/index.php">Carit Site</a> ,
+          <a href="http://is.rmutk.ac.th">IT Site</a>
+      </p>
+      <p class="footer-company-name">มหาวิทยาลัยเทคโนโลยีราชมงคลกรุงเทพ © 2016</p>
+  </div>
+  <div class="footer-center">
+      <div><i class="fa fa-map-marker"></i>
+      <p><span>มทร.กรุงเทพ เลขที่ 2 ถนนนางลิ้นจี่ ทุ่งมหาเมฆ สาทร</span> กรุงเทพฯ 10120</p></div>
+      <div><i class="fa fa-phone"></i><p>+66 0 2287 7010</p></div>
+  </div>
+</footer>
+
+</body>
+</html>
